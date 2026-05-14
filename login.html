@@ -528,12 +528,61 @@
   .reveal > *:nth-child(8){animation-delay:.75s}
   @keyframes rise{to{opacity:1;transform:translateY(0)}}
 
-  @media (max-width: 980px){
-    .stage{grid-template-columns:1fr}
-    .right{display:none}
-    .left{padding:40px 28px}
-    .form{margin-left:0}
-    h1{font-size:42px}
+  /* ── TABLET LANDSCAPE (até 1280px) ── */
+  @media (max-width: 1280px) {
+    .left { padding: 32px 48px; }
+    .logo-block img { width: 160px; height: 160px; }
+    .logo-block .wordmark { font-size: 32px; }
+    h1 { font-size: 36px; }
+    .quote p { font-size: 28px; }
+  }
+
+  /* ── TABLET PORTRAIT (até 980px): esconde painel direito ── */
+  @media (max-width: 980px) {
+    body { overflow: auto; }
+    .stage {
+      grid-template-columns: 1fr;
+      height: auto;
+      min-height: 100vh;
+    }
+    .right { display: none; }
+    .left {
+      padding: 48px 32px 40px;
+      min-height: 100vh;
+    }
+    .form-wrap { padding: 16px 0; }
+    .form { width: min(480px, 100%); }
+    .logo-block img { width: 140px; height: 140px; }
+    .logo-block .wordmark { font-size: 30px; }
+    h1 { font-size: 38px; }
+    .btn { height: 52px; }
+  }
+
+  /* ── MOBILE GRANDE (até 600px) ── */
+  @media (max-width: 600px) {
+    .left { padding: 36px 20px 32px; }
+    .logo-block img { width: 110px; height: 110px; }
+    .logo-block .wordmark { font-size: 26px; letter-spacing: .36em; }
+    .logo-block .tagline { font-size: 10px; white-space: normal; text-align: center; }
+    h1 { font-size: 32px; }
+    .sub { font-size: 13px; }
+    .field input { height: 48px; font-size: 14px; }
+    .btn { height: 50px; font-size: 13px; }
+    .sso { gap: 8px; }
+    .sso button { height: 44px; }
+    .foot { flex-direction: column; gap: 8px; text-align: center; }
+    .tag { font-size: 10px; padding: 6px 10px; }
+  }
+
+  /* ── MOBILE PEQUENO (até 380px) ── */
+  @media (max-width: 380px) {
+    .left { padding: 28px 16px 24px; }
+    .logo-block img { width: 90px; height: 90px; }
+    .logo-block .wordmark { font-size: 22px; }
+    h1 { font-size: 28px; }
+    .field input { height: 44px; }
+    .btn { height: 46px; }
+    .sso { grid-template-columns: repeat(3, 1fr); gap: 6px; }
   }
 </style>
 </head>
